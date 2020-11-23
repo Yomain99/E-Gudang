@@ -24,6 +24,9 @@ class PenyewaController extends Controller
 
     public function Detailgudang($id){
         $detailgudang = Building::find($id);
+        if(empty($detailgudang)){
+            abort(404);
+        }
 
         return view('user.gudang',['detailgudang'=>$detailgudang]);
     }

@@ -166,7 +166,7 @@
                           @endguest
                   @endif
                   @if (Auth::user()->id_role == 2)
-                  <li><a href="{{ url('/home') }}"><i class="fa fa-user"></i> Manage</a></li>
+                  <li><a href="{{ url('/halaman') }}"><i class="fa fa-user"></i> Manage</a></li>
                   @guest
                           <li>
                               <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -201,7 +201,7 @@
                           @endguest
                   @endif
                   @if(Auth::user()->id_role == 1) 
-                  <li><a href="{{ url('/home') }}"><i class="fa fa-user"></i> Manage</a></li>
+                  <li><a href="{{ url('/halaman') }}"><i class="fa fa-user"></i> Manage</a></li>
                   @guest
                           <li>
                               <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -297,7 +297,7 @@
 
       <!-- Single Welcome Slides -->
       <div class="single-welcome-slides bg-img bg-overlay jarallax">
-        <img src="assets/img/bg-img/1.jpg">
+        <img src="assets/img/bg-img/bg.png">
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-12 col-lg-10">
@@ -391,60 +391,6 @@
   </section>
   <!-- ##### Famie Benefits Area End ##### -->
   <!-- ##### Contact Area End ##### -->
-
-  <!-- ##### News Area Start ##### -->
-  <section class="news-area bg-gray section-padding-100-0">
-    <div class="container">
-      <div class="row">
-
-        <!-- Featured Post Area -->
-        <div class="col-14 col-lg-6">
-          <div class="featured-post-area mb-100 wow fadeInUp" data-wow-delay="100ms">
-            <img src="img/bg-img/17.jpg" alt="">
-            <!-- Post Content -->
-            <div class="post-content">
-              <h6>Post on <a href="#">18 Aug 2018</a> / <a href="#">Carlos Bacca</a></h6>
-              <a href="#" class="post-title">Why innovation is key to maintaining our export market share</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single Blog Area -->
-        <div class="col-12 col-lg-6 mb-100">
-
-          <!-- Single Blog Area -->
-          <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-            <!-- Post Content -->
-            <div class="post-content">
-              <h6>Post on <a href="#">18 Aug 2018</a> / <a href="#">Peter Crough</a></h6>
-              <a href="#" class="post-title">Rising cattle supplies see beef export lifted</a>
-              <p>Maecenas facilisis quam orcit, velo porttitor arcu egestas eu. Maecenas donald imperdiet nibh, quis. Etiam non scelerisque exited sagittis...</p>
-            </div>
-          </div>
-
-          <!-- Single Blog Area -->
-          <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="500ms">
-            <!-- Post Content -->
-            <div class="post-content">
-              <h6>Post on <a href="#">18 Aug 2018</a> / <a href="#">Peter Crough</a></h6>
-              <a href="#" class="post-title">Cattle marts: Cows take a hit at the ringside</a>
-              <p>Maecenas facilisis quam orcit, velo porttitor arcu egestas eu. Maecenas donald imperdiet nibh, quis. Etiam non scelerisque exited sagittis...</p>
-            </div>
-          </div>
-
-          <!-- Single Blog Area -->
-          <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="700ms">
-            <!-- Post Content -->
-            <div class="post-content">
-              <h6>Post on <a href="#">18 Aug 2018</a> / <a href="#">Peter Crough</a></h6>
-              <a href="#" class="post-title">Malting barley price set to commence</a>
-              <p>Maecenas facilisis quam orcit, velo porttitor arcu egestas eu. Maecenas donald imperdiet nibh, quis. Etiam non scelerisque exited sagittis...</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
   </section>
     
 

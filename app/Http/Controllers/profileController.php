@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PetaniController extends Controller
+class profileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class PetaniController extends Controller
      */
     public function index()
     {
-        return view('Petani.index');
+        //
     }
 
     /**

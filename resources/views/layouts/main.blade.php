@@ -78,7 +78,7 @@
 <footer>
   <div class="container">
     <div class="col-md-12">
-      SISTEM INFORMASI PENYEWAAN INFRASTRUKTUR DI JEMBER
+      SISTEM INFORMASI PENYEWAAN Gudang Bawang Merah di NGANJUK
     </div>
   </footer>
   <!-- /footer content -->

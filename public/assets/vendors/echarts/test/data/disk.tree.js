@@ -5213,7 +5213,7 @@ window.disk_usage_tree =
                     {
                         "value": 112,
                         "name": "HomeSync.menu",
-                        "path": "CoreServices/MenuExtras/HomeSync.menu"
+                        "path": "CoreServices/MenuExtras/halamanSync.menu"
                     },
                     {
                         "value": 84,
@@ -5914,7 +5914,7 @@ window.disk_usage_tree =
                     {
                         "value": 340,
                         "name": "HomeDirMechanism.bundle",
-                        "path": "CoreServices/SecurityAgentPlugins/HomeDirMechanism.bundle"
+                        "path": "CoreServices/SecurityAgentPlugins/halamanDirMechanism.bundle"
                     },
                     {
                         "value": 1156,

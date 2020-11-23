@@ -17,10 +17,10 @@ class UsersTableSeeder extends Seeder
 
         $admin = new User();
         $admin->name = 'Admin';
-        $admin->email = 'admin@gmail.com';
+        $admin->email = 'yosha@gmail.com';
         $admin->password = bcrypt('admin');
-        $admin->user_address = 'Jl Kenangan 12 Jember';
-        $admin->phone = '087709307745';
+        $admin->user_address = 'Jl besuki no 22 nganjuk';
+        $admin->phone = '081231718801';
         $admin->id_role = '1';
         $admin->save();
 
@@ -34,13 +34,13 @@ class UsersTableSeeder extends Seeder
         $owner->password = bcrypt('owner');
         $owner->save();
 
-        $Petani = new User();
-        $Petani->name = 'Petani';
-        $Petani->email = 'Petani@gmail.com';
-        $Petani->user_address = 'Jl Kenangan 12 Jember';
-        $Petani->phone = '081235367890';
-        $Petani->id_role = '3';
-        $Petani->password = bcrypt('Petani');
-        $Petani->save();
+        $masyarakat = new User();
+        $masyarakat->name = 'masyarakat';
+        $masyarakat->email = 'masyarakat@gmail.com';
+        $masyarakat->user_address = 'Jl Kenangan 12 Jember';
+        $masyarakat->phone = '081235367890';
+        $masyarakat->id_role = '3';
+        $masyarakat->password = bcrypt('masyarakat');
+        $masyarakat->save();
     }
 }
