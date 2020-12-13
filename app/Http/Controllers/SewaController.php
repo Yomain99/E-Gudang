@@ -56,21 +56,6 @@ class SewaController extends Controller
         }elseif ($request->day_start > $request->day_over){
             return back()->with('fail' , 'Tanggal mulai tidak valid');
         }
-
-        // $id = Auth::user()->id;
-        // $sewa = \App\Rental::all()->where('id_loaner','=',$id);
-        // $id = Auth::user()->id;
-        // $sewa = DB::table('rentals')
-        // ->join('buildings', 'buildings.id','=','rentals.id_building')
-        // ->wherenotExists(function($query){
-        //     $query->select(DB::raw(1))
-        //           ->from('payments')
-        //           ->whereRaw('payments.id_rental = rentals.id');
-        // })
-        // ->get();
-       
-
-        // return view('user.cart')->with('sewa', $sewa);
     }
 
     public function rentals()

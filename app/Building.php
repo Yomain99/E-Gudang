@@ -33,8 +33,8 @@ class Building extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id_owner', 'name_building', 'address_building', 'cost', 'capacity', 'description', 'files', 'submission', 'verif', 'edit', 'created_at', 'updated_at'];
-
+    // protected $fillable = ['id_owner', 'name_building', 'address_building', 'cost', 'capacity', 'description', 'files', 'submission', 'verif', 'edit', 'created_at', 'updated_at'];
+    protected $guarded = [];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

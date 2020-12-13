@@ -63,8 +63,8 @@
               </div>
               <!-- Top Header Content -->
               <div class="top-header-meta text-right">
-                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: Yoshaindra@YI@gmail.com</span></a>
-                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +62 8801 3171 8801</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Yoshaindra@YI@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: Yoshaindra@YI@gmail.com</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+62 8801 3171 8801"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +62 8801 3171 8801</span></a>
               </div>
             </div>
           </div>
@@ -129,8 +129,8 @@
                           @endguest
                           @else
                   @if (Auth::user()->id_role == 3)
-                  <li><a href="{{ url('/checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                  <li><a href="{{ url('/sewa') }}"><i class="fa fa-shopping-cart"></i> Sewa</a></li>
+                  <li><a href="{{ url('/sewa') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                  <li><a href="{{ url('/checkout') }}"><i class="fa fa-shopping-cart"></i> Sewa</a></li>
                   <li><a href="{{ url('/') }}"><i class="fa fa-star"></i> Cari gudang</a></li>
                   @guest
                           <li class="nav-item">
@@ -147,17 +147,14 @@
 
                           @else
                           <li >
-                              <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                              <a href="javascript:;" data-toggle="dropdown"
                               aria-expanded="false">
                               <img src="images/img.jpg" alt="">@yield('akun')
-                              <span class=" fa fa-chevron-down"> {{ Auth::user()->name }}</span>
+                              <span > {{ Auth::user()->name }}</span>
                           </a>
-                          <ul >
                               <li><a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right">
-                                  </i>{{ __('Logout') }}</a></li>
-                                  </ul>
+                                  document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                       @csrf
                                   </form>
@@ -181,22 +178,19 @@
                           
 
                           @else
-                          <li>
-                              <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                          <li >
+                              <a href="javascript:;" data-toggle="dropdown"
                               aria-expanded="false">
                               <img src="images/img.jpg" alt="">@yield('akun')
-                              <span class=" fa fa-chevron-down"> {{ Auth::user()->name }}</span>
+                              <span > {{ Auth::user()->name }}</span>
                           </a>
-                          <ul >
                               <li><a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right">
-                                  </i>{{ __('Logout') }}</a></li>
-                              </ul>
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                  @csrf
-                              </form>
-                              
+                                  document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                      @csrf
+                                  </form>
+                                  
                           </li>
                           @endguest
                   @endif
@@ -217,17 +211,14 @@
 
                           @else
                           <li>
-                              <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                              <a href="javascript:;"  data-toggle="dropdown"
                               aria-expanded="false">
                               <img src="images/img.jpg" alt="">@yield('akun')
-                              <span class=" fa fa-chevron-down"> {{ Auth::user()->name }}</span>
+                              <span> {{ Auth::user()->name }}</span>
                           </a>
-                          <ul>
                               <li><a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right">
-                                  </i>{{ __('Logout') }}</a></li>
-                              </ul>
+                                  document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                   @csrf
                               </form>
@@ -237,54 +228,10 @@
                   
                   @endif
                   @endguest
-                <!-- </ul>
-                    <ul class="dropdown">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="farming-practice.html">Farming Practice</a></li>
-                      <li><a href="shop.html">Shop</a>
-                        <ul class="dropdown">
-                          <li><a href="our-product.html">Our Products</a></li>
-                          <li><a href="shop.html">Shop</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="news.html">News</a>
-                        <ul class="dropdown">
-                          <li><a href="news.html">News</a></li>
-                          <li><a href="news-details.html">News Details</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="our-product.html">Our Product</a></li>
-                  <li><a href="farming-practice.html">Farming Practice</a></li>
-                  <li><a href="news.html">News</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul> -->
-                <!-- Search Icon -->
-                <div id="searchIcon">
-                  <i class="icon_search" aria-hidden="true"></i>
-                </div>
-                <!-- Cart Icon -->
-                <div id="cartIcon">
-                  <a href="#">
-                    <i class="icon_cart_alt" aria-hidden="true"></i>
-                    <span class="cart-quantity">2</span>
-                  </a>
-                </div>
-              </div>
+
               <!-- Navbar End -->
             </div>
           </nav>
-          <div class="search-form">
-            <form action="#" method="get">
-              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
-              <button type="submit" class="d-none"></button>
-            </form>
-            <!-- Close Icon -->
-            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
-          </div>
         </div>
       </div>
     </div>
@@ -297,38 +244,16 @@
 
       <!-- Single Welcome Slides -->
       <div class="single-welcome-slides bg-img bg-overlay jarallax">
-        <img src="assets/img/bg-img/bg.png">
-        <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-12 col-lg-10">
-              <div class="welcome-content">
-                <h2 data-animation="fadeInUp" data-delay="200ms">The hearth of the farm is the true center of our universe.</h2>
-                <p data-animation="fadeInUp" data-delay="400ms">Mauris vestibulum dolor nec lacinia facilisis. Fusce interdum sagittis volutpat. Praesent eget varius ligula, malesuada eleifend purus. Aenean euismod est at mauris mollis ultricies.
-                  Morbi arcu mi, dictum eu luala, dapibus
-                  interdum mollis.</p>
-                <a href="#" class="btn famie-btn mt-4" data-animation="bounceInUp" data-delay="600ms">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="{{asset('assets/img/bg-img/p.jpg')}}">
       </div>
 
       <!-- Single Welcome Slides -->
       <div class="single-welcome-slides bg-img bg-overlay jarallax">
-      <img src="assets/img/bg-img/G.jpg">
-        <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-12 col-lg-10">
-              <div class="welcome-content">
-                <h2 data-animation="fadeInDown" data-delay="200ms">The hearth of the farm is the true center of our universe.</h2>
-                <p data-animation="fadeInDown" data-delay="400ms">Mauris vestibulum dolor nec lacinia facilisis. Fusce interdum sagittis volutpat. Praesent eget varius ligula, malesuada eleifend purus. Aenean euismod est at mauris mollis ultricies.
-                  Morbi arcu mi, dictum eu luala, dapibus
-                  interdum mollis.</p>
-                <a href="#" class="btn famie-btn mt-4" data-animation="bounceInDown" data-delay="600ms">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <img src="{{asset('assets/img/bg-img/1.jpg')}}">
+      </div>
+            <!-- Single Welcome Slides -->
+      <div class="single-welcome-slides bg-img bg-overlay jarallax">
+      <img src="{{asset('assets/img/bg-img/d.jpg')}}">
       </div>
 
     </div>
@@ -341,7 +266,7 @@
       <div class="row">
         <div class="col-12">
           <div class="benefits-thumbnail mb-50">
-            <img src="assets/img/bg-img/2.jpg" alt="">
+            <img src="{{asset('assets/img/bg-img/2.jpg')}}" alt="">
           </div>
         </div>
       </div>
@@ -350,40 +275,40 @@
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="100ms">
-            <img src="assets/img/core-img/digger.png" alt="">
-            <h5>Best Services</h5>
+            <img src="{{asset('assets/img/core-img/digger.png')}}" alt="">
+            <h5>Pelayanan Terbaik</h5>
           </div>
         </div>
 
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="300ms">
-            <img src="assets/img/core-img/windmill.png" alt="">
-            <h5>Farm Experiences</h5>
+            <img src="{{asset('assets/img/core-img/windmill.png')}}" alt="">
+            <h5>Pengalaman Bertani</h5>
           </div>
         </div>
 
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="500ms">
-            <img src="assets/img/core-img/cereals.png" alt="">
-            <h5>100% Natural</h5>
+            <img src="{{asset('assets/img/core-img/cereals.png')}}" alt="">
+            <h5>Gudang Terbaik</h5>
           </div>
         </div>
 
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="700ms">
-            <img src="assets/img/core-img/tractor.png" alt="">
-            <h5>Farm Equipment</h5>
+            <img src="{{asset('assets/img/core-img/tractor.png')}}" alt="">
+            <h5>Penghasil Terbaik</h5>
           </div>
         </div>
 
         <!-- Single Benefits Area -->
         <div class="col-12 col-sm-4 col-lg">
           <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="900ms">
-            <img src="assets/img/core-img/sunrise.png" alt="">
-            <h5>Organic food</h5>
+            <img src="{{asset('assets/img/core-img/sunrise.png')}}" alt="">
+            <h5>Gudang Ramah Lingkungan</h5>
           </div>
         </div>
       </div>
@@ -397,111 +322,6 @@
     @include('user.layout.alert')
     
     @yield('content')
-
-
-
-
-
-
-  <!-- ##### Footer Area Start ##### -->
-  <footer class="footer-area">
-    <!-- Main Footer Area -->
-    <div class="main-footer bg-img bg-overlay section-padding-80-0" style="background-image: url(img/bg-img/3.jpg);">
-      <div class="container">
-        <div class="row">
-
-          <!-- Single Footer Widget Area -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="footer-widget mb-80" >
-              <a href="#" class="foo-logo d-block mb-10"><img src="img/core-img/logo2.png" alt="" ></a>
-              <p>Lorem ipsum dolor sit amet, consecte stare adipiscing elit. In act honcus risus atiner Pellentesque risus.</p>
-              <div class="contact-info">
-                <p><i class="fa fa-map-pin" aria-hidden="true"></i><span>120 Raymond Rd, New York</span></p>
-                <p><i class="fa fa-envelope" aria-hidden="true"></i><span>info.deercreative@gmail.com</span></p>
-                <p><i class="fa fa-phone" aria-hidden="true"></i><span>+84 223 9000</span></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Single Footer Widget Area -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="footer-widget mb-80">
-              <h5 class="widget-title">QUICK LINK</h5>
-              <!-- Footer Widget Nav -->
-              <nav class="footer-widget-nav">
-                <ul>
-                  <li><a href="#">Purchase</a></li>
-                  <li><a href="#">Policities</a></li>
-                  <li><a href="#">Shipping</a></li>
-                  <li><a href="#">FAQs</a></li>
-                  <li><a href="#">Return</a></li>
-                  <li><a href="#">Careers</a></li>
-                  <li><a href="#">Payments</a></li>
-                  <li><a href="#">Partners</a></li>
-                  <li><a href="#">Guide</a></li>
-                  <li><a href="#">Standard</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Brands</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <!-- Single Footer Widget Area -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="footer-widget mb-80">
-              <h5 class="widget-title">RECENT NEWS</h5>
-
-              <!-- Single Recent News Start -->
-              <div class="single-recent-blog d-flex align-items-center">
-                <div class="post-thumbnail">
-                  <img src="img/bg-img/4.jpg" alt="">
-                </div>
-                <div class="post-content">
-                  <a href="#" class="post-title">WA’s largest farming business on the market</a>
-                  <div class="post-date">18 Aug 2018</div>
-                </div>
-              </div>
-
-              <!-- Single Recent News Start -->
-              <div class="single-recent-blog d-flex align-items-center">
-                <div class="post-thumbnail">
-                  <img src="img/bg-img/5.jpg" alt="">
-                </div>
-                <div class="post-content">
-                  <a href="#" class="post-title">Beef retail prices hit a record</a>
-                  <div class="post-date">18 Aug 2018</div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Single Footer Widget Area -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="footer-widget mb-80">
-              <h5 class="widget-title">STAY CONNECTED</h5>
-              <!-- Footer Social Info -->
-              <div class="footer-social-info">
-                <a href="#">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                  <span>Facebook</span>
-                </a>
-                <a href="#">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                  <span>Twitter</span>
-                </a>
-                <a href="#">
-                  <i class="fa fa-pinterest" aria-hidden="true"></i>
-                  <span>Pinterest</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
 
     <!-- Copywrite Area  -->
     <div class="copywrite-area">

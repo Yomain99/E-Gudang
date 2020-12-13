@@ -3,7 +3,7 @@
 @section('title','E-Gudang | Penyewagudang')
 
 @section('container')
-<div style="text-align: center; font-family: Bookman Old Style; font-size:30px">DATA PENYEWA gudang</div>
+<div style="text-align: center; font-family: Bookman Old Style; font-size:30px">DATA PENYEWA GUDANG</div>
 <br>
 <br>
 <div class="x_panel">
@@ -20,7 +20,7 @@
                     <th>Total</th>
                     <th>Bukti Transfer</th>
                     <th>Status</th>
-                    <th>Aksi</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>

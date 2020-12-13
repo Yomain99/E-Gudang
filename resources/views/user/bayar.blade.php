@@ -1,6 +1,6 @@
 @extends('user.layout.home')
 
-@section('title','Detail gudang')
+@section('title','Detail Gedung')
 @section('content')
 
 <section id="cart_items mb-5">
@@ -18,7 +18,7 @@
                         <p>Keterangan</p>
                         <form>
                             <input disabled type="text" value="Nama">
-                            <input disabled type="text" value="gudang">
+                            <input disabled type="text" value="Gedung">
                             <input disabled type="text" value="Mulai Sewa">
                             <input disabled type="text" value="Selesai">
                             <input disabled type="text" value="Harga /Hari">
@@ -42,7 +42,7 @@
                                 @csrf
                                 <input type="hidden" name="id" value="{{$item->id}}">
                                 <input disabled type="text" name="nama" value="{{\DB::table('users')->where('id', $item->id_loaner)->value('name')}}">
-                                <input disabled type="text" name="gudang" value="{{\DB::table('buildings')->where('id', $item->id_building)->value('name_building')}}">
+                                <input disabled type="text" name="gedung" value="{{\DB::table('buildings')->where('id', $item->id_building)->value('name_building')}}">
                                 <input disabled type="text" name="awal_sewa" value="{{date('d M Y', strtotime($item->day_start))}}">
                                 <input disabled type="text" name="akhir_sewa" value="{{date('d M Y', strtotime($item->day_over))}}">
                                 <input disabled type="text" name="harga" value="Rp {{number_format(\DB::table('buildings')->where('id', $item->id_building)->value('cost'))}}">
@@ -72,7 +72,7 @@
                 </div>
                 
             </div>
-</section> <!--/#cart_items-->
+</section>
 
 
 @endsection

@@ -60,7 +60,7 @@
 
                 </tr>
                 <tr>
-                  <th scope="row">Kapasitas</th>
+                  <th scope="row">Kapasitas/Ton</th>
                   <td>: {{$gudang->capacity}}</td>
 
 

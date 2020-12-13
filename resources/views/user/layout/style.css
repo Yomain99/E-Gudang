@@ -1,3 +1,0 @@
-users 		id	name	company_name	user_address	email	phone	email_verified_at	password	id_role	remember_token	created_at	updated_at
-roles 		id	role_name	created_at	updated_at 	
-migrations 	id	migration	batch 	

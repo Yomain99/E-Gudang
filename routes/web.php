@@ -35,9 +35,10 @@ Route::get('/halaman', 'HomeController@index')->middleware('auth')->name('home')
         Route::get('/buildings', 'GudangController@index')->name('owner.indexgudang');
         Route::post('/buildings/create', 'GudangController@store')->name('owner.creategudang');
         Route::get('/buildings/{gudang}', 'GudangController@edit')->name('owner.proposeedit');
-        Route::patch('/buildings/update/{gudang}', 'GudangController@update')->name('owner.editgudang');
+        Route::put('/buildings/update/{gudang}', 'GudangController@update')->name('owner.editgudang');
         Route::get('editprofile', 'OwnerController@edit');
         Route::get('/penyewa', 'GudangController@penyewa');
+        Route::delete('/buildings/{gudang}', 'GudangController@edit')->name('owner.proposeedit');
         
     });
     
@@ -77,7 +78,10 @@ Route::get('/halaman', 'HomeController@index')->middleware('auth')->name('home')
         Route::get('/admin/pemilik/{user}', 'GudangController@pemilik')->name('pemilik.gudang');
         Route::get('/datapenyewa', 'GudangController@penyewa');
         Route::patch('admin/verifbayar/{payment}', 'SewaController@verifbayar');
+        Route::get('/gudang/destroy/{id}','GudangController@destroy')->name('gudang/destroy');
+
         
         // Route::get('admin.showgudang/{gudang}', 'GudangController@show');
     });
+    
     

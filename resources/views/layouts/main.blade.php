@@ -75,12 +75,6 @@
     </div>
 
 <!-- footer content -->
-<footer>
-  <div class="container">
-    <div class="col-md-12">
-      SISTEM INFORMASI PENYEWAAN Gudang Bawang Merah di NGANJUK
-    </div>
-  </footer>
   <!-- /footer content -->
         <!-- jQuery -->
     <script src="{{ asset('assets/vendors/jquery/dist/jquery.min.js') }}"></script>

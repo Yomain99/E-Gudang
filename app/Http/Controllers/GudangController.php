@@ -73,7 +73,8 @@ class gudangController extends Controller
 
 
         Building::create([
-            'id_owner' => Auth::user()->id,
+            'id' => mt_rand(10000,99999),
+            'id_owner' => Auth::id(),
             'name_building' => $request->building_name,
             'address_building' => $request->building_address,
             'cost' => $request->building_cost,
@@ -125,7 +126,15 @@ class gudangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
+    
+    public function destroy($id)
+    {
+        \App\Payment::where('id_building',$id)->delete();
+        \App\Rental::where('id_building',$id)->delete();
+        $gudang = \App\Building::find($id);
+        $gudang->delete();
+        return redirect(route('admin.indexbuilding'))->with('sukses','Gudang berhasil dihapus');
+    }
     public function adminverif(Building $gudang)
     {
         $gudang->update([
@@ -170,6 +179,7 @@ class gudangController extends Controller
         
         return view('admin.showgudang', compact('gudang'));
     }
+    
 
     /**
      * Update the specified resource in storage.
@@ -178,8 +188,9 @@ class gudangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Building $gudang)
+    public function update(Request $request,  $gudang)
     {
+        $data = Building::find($gudang);
         //
 
         // return view('admin.showgudang', ['gudang'=> $request]);
@@ -192,11 +203,11 @@ class gudangController extends Controller
         // dd($request);
 
         if (
-            $request->building_name == $gudang->name_building &&
-            $request->building_address == $gudang->address_building &&
-            $request->building_cost == $gudang->cost &&
-            $request->building_capacity == $gudang->capacity &&
-            $request->building_description == $gudang->description &&
+            $request->building_name == $data->name_building &&
+            $request->building_address == $data->address_building &&
+            $request->building_cost == $data->cost &&
+            $request->building_capacity == $data->capacity &&
+            $request->building_description == $data->description &&
             $request->building_file == null &&
             $request->antarjemput == null &&
             $request->pendingin == null &&
@@ -220,7 +231,7 @@ class gudangController extends Controller
 
                 // pindah file dari form ke folder laravel
                 $file->move($folder, $file_foto);
-                $gudang->update([
+                $data->update([
                     'name_building' => $request->building_name,
                     'address_building' => $request->building_address,
                     'cost' => $request->building_cost,
@@ -235,7 +246,7 @@ class gudangController extends Controller
 
                 ]);
             } else {
-                $gudang->update([
+                $data->update([
                     'name_building' => $request->building_name,
                     'address_building' => $request->building_address,
                     'cost' => $request->building_cost,

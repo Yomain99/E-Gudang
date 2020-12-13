@@ -97,11 +97,11 @@
           <th>Nama gudang</th>
           <th>Alamat gudang</th>
           <th>Harga</th>
-          <th>Kapasitas</th>
+          <th>Kapasitas/Ton</th>
           <th>Deskripsi</th>
           <th>Kriteria</th>
           <th>Gambar</th>
-          <th>Aksi</th>
+          <th>Edit</th>
         </tr>
       </thead>
       <tbody>
@@ -115,7 +115,7 @@
           <td>{{ $gudang->description }}</td>
           <td>
             @if ($gudang->antarjemput + $gudang->pendingin + $gudang->sirkulasi_udara
-            <= 1) Standart @elseif($gudang->antarjemput + $gudang->pendingin
+            <= 1) Standart @elseif($gudang->  antarjemput + $gudang->pendingin
               + $gudang->sirkulasi_udara <= 3) VIP @else VVIP @endif </td> <td><img
                   src="/file/{{ $gudang->files }}" style="width: 200px; height: 200px " alt=""></td>
           <td>
@@ -139,14 +139,14 @@
 
             @if ($gudang->verif==0 && $gudang->edit==1)
             <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
-              data-target="#exampleModal-{{ $gudang->id_building }}">
+              data-target="#exampleModal{{$gudang->id}}">
               Edit
             </button>
             <!-- Modal -->
 
             @endif
           </td>
-          <div class="modal fade" id="exampleModal-{{ $gudang->id_building }}" tabindex="-1" role="dialog"
+          <div class="modal fade" id="exampleModal{{$gudang->id}}" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -156,10 +156,10 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form action="{{ route('owner.editgudang',$gudang)}}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('owner.editgudang',$gudang->id)}}" method="post" enctype="multipart/form-data">
                   <div class="modal-body">
                     @csrf
-                    @method('PATCH')
+                    @method('PUT')
                     <div class="form-group">
                       <label for="building-name">Nama gudang </label>
                       <input type="text" name="building_name" class="form-control" required
@@ -175,7 +175,7 @@
                       <input type="text" name="building_cost" class="form-control" required value="{{ $gudang->cost }}">
                     </div>
                     <div class="form-group">
-                      <label for="building-name">Kapasitas gudang </label>
+                      <label for="building-name">Kapasitas gudang/Ton </label>
                       <input type="text" name="building_capacity" required class="form-control"
                         value="{{ $gudang->capacity }}">
                     </div>
@@ -193,6 +193,12 @@
                           checked
                           @endif >
                           <label for="pendingin">Pendingin</label>
+                        </div>
+                        <div class="col-sm-3">
+                          <input type="checkbox" name="sirkulasi_udara" @if ($gudang->sirkulasi_udara==1)
+                          checked
+                          @endif >
+                          <label for="pendingin">Sirkulasi Udara</label>
                         </div>
                       </div>
                     </div>

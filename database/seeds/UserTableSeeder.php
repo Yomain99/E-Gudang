@@ -25,19 +25,19 @@ class UsersTableSeeder extends Seeder
         $admin->save();
 
         $owner = new User();
-        $owner->name = 'Owner';
-        $owner->email = 'owner@gmail.com';
-        $owner->company_name = 'Owner Corp.';
-        $owner->user_address = 'Jl Kenangan mantan 13 Jember';
-        $owner->phone = '089876987954';
+        $owner->name = 'Tedy';
+        $owner->email = 'tedy@gmail.com';
+        $owner->company_name = 'Owner';
+        $owner->user_address = 'Jl hos cokroaminoto';
+        $owner->phone = '081231718801';
         $owner->id_role = '2';
         $owner->password = bcrypt('owner');
         $owner->save();
 
         $masyarakat = new User();
-        $masyarakat->name = 'masyarakat';
-        $masyarakat->email = 'masyarakat@gmail.com';
-        $masyarakat->user_address = 'Jl Kenangan 12 Jember';
+        $masyarakat->name = 'pemri';
+        $masyarakat->email = 'pemri@gmail.com';
+        $masyarakat->user_address = 'Jl hos cokroaminoto';
         $masyarakat->phone = '081235367890';
         $masyarakat->id_role = '3';
         $masyarakat->password = bcrypt('masyarakat');

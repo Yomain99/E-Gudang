@@ -22,7 +22,8 @@
                     <th>Harga Sewa</th>
                     <th>Pemilik</th>
                     <th>Status</th>
-                    <th>Aksi</th>
+                    <th>Edit</th>
+                    <th>Hapus</th>
                 </tr>
             </thead>
             <tbody>
@@ -191,6 +192,10 @@
                             </div>
                         </div>
                     </div>
+                <td>
+                    <a href="{{route('gudang/destroy', $gudang['id'])}}" class="btn btn-danger" style="text-decoration:none" >Hapus
+                    </a>
+                </td>
 
                 </tr>
                 @endforeach

@@ -34,7 +34,7 @@
 
 								</span>
                                 <p><b>Alamat    :</b> {{ $detailgudang->address_building }}</p>
-                                <p><b>Kapasitas :</b> {{ $detailgudang->capacity }} orang</p>
+                                <p><b>Kapasitas/Ton :</b> {{ $detailgudang->capacity }} orang</p>
                                 <p><b>Pemilik   : </b>{{ $detailgudang->user->name}} </p>
                                 <a href=""><img src="images/product-details/share.png" class="share img-responsive"
                                                 alt=""/></a>

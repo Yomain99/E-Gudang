@@ -3,7 +3,7 @@
 @section('title','E-Gudang | Penyewagudang')
 
 @section('container')
-<div style="text-align: center; font-family: Bookman Old Style; font-size:30px">DATA PENYEWA gudang</div>
+<div style="text-align: center; font-family: Bookman Old Style; font-size:30px">Penyewaan Gudang</div>
 <br>
 <br>
 <div class="x_panel">

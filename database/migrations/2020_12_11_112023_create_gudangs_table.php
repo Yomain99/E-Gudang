@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreategudangsTable extends Migration
+class CreateGudangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -22,16 +22,19 @@ class CreategudangsTable extends Migration
             $table->integer('capacity');
             $table->string('description');
             $table->string('files');
-            $table->boolean('antarjemput');
-            $table->boolean('pendingin');
-            $table->boolean('sirkulasi_udara');
+            $table->boolean('ac');
+            $table->boolean('proyektor');
+            $table->boolean('toilet');
+            $table->boolean('rganti');
+            $table->boolean('parking');
+            $table->boolean('musholla');
+            $table->boolean('podium');
             $table->boolean('submission')->default('1');
             $table->boolean('verif')->default('0');
             $table->boolean('edit')->default('0');
             $table->timestamps();
 
             $table->foreign('id_owner')->references('id')->on('users')->ondelete('restrict');
-
 
         });
     }
