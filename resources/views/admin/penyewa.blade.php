@@ -41,7 +41,7 @@
                 <td scope="row">{{$loop->iteration}}</td>
                     <td>{{$namagudang}}</td>
                     <td>{{$address_building}}</td>
-                    <td>Rp {{number_format($cost)}}</td>
+                    <td>Rp {{number_format($cost*1.1)}}</td>
                     <td>
                         <p>Mulai</p>
                         <span><b id="start_date">{{ date('d M Y', strtotime($item->day_start)) }}</b></span>
@@ -53,7 +53,7 @@
                     <td>
                         <span><b>{{$selisih->days + 1}} hari</b></span>
                     </td>
-                    <td>Rp {{number_format($item->salary)}}</td>
+                    <td>Rp {{number_format($item->salary*1.1)}}</td>
                     <td>
                         <img src="{{ asset('storage/'. $item->bukti_tf) }}" alt="" width="100px" height="80px">
                     </td>
@@ -100,7 +100,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Harga gudang</label>
-                                                <p>Rp {{number_format($cost)}}</h3>
+                                                <p>Rp {{number_format($cost*1.1)}}</h3>
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Pelaksanaan</label>
@@ -115,7 +115,7 @@
                                             </div>
                                             <div class="form-group">
                                                     <label for="">Total</label>
-                                                    <p>Rp {{number_format($item->salary)}}</p>
+                                                    <p>Rp {{number_format($item->salary*1.1)}}</p>
                                             </div>
                                             <div class="form-group">
                                                 <img src="{{ asset('storage/'. $item->bukti_tf) }}" style="width: 200px; height: 200px;"srcset="">

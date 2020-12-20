@@ -25,6 +25,7 @@
     $name_building = \DB::table('buildings')->where('id', $item->id_building)->value('name_building');
     $address_building = \DB::table('buildings')->where('id', $item->id_building)->value('address_building');
     $cost = \DB::table('buildings')->where('id', $item->id_building)->value('cost');
+    
     // dd($selisih->days)
     @endphp
     @endforeach
@@ -108,7 +109,7 @@
         <td> </td>
         <td>:</td>
         <td></td>
-        <td><input disabled type="text" value="Rp {{ number_format($cost)}}"></td>
+        <td><input disabled type="text" value="Rp {{ number_format($cost*1.1)}}"></td>
     </tr>
     <tr>
         <td> </td>
@@ -152,7 +153,7 @@
         <td> </td>
         <td>:</td>
         <td></td>
-        <td><input disabled type="text" value="Rp {{number_format($item->salary)}}"></td>
+        <td><input disabled type="text" value="Rp {{number_format($item->salary+($item->salary*0.1))}}"></td>
     </tr>
     <tr>
             <td> </td>

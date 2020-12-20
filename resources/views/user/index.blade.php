@@ -17,7 +17,7 @@
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
                                                     <img style="width:10cm; height:7cm" src="{{ asset('file/'. $gudang->files) }}" alt=""/>
-                                                    <h2>Rp {{ number_format($gudang->cost) }} /hari</h2>
+                                                    <h2>Rp {{ number_format($gudang->cost+($gudang->cost*0.1)) }} /hari</h2>
                                                     <p><h4>{{$gudang->name_building}}<h4></p>
                                                     <a href="#" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Sewa
@@ -26,7 +26,7 @@
                                                 <a href="/gudang/{{ $gudang->id }}">
                                                     <div class="product-overlay">
                                                         <div class="overlay-content">
-                                                            <h2>Rp {{number_format($gudang->cost)}} /hari</h2>
+                                                            <h2>Rp {{number_format($gudang->cost+($gudang->cost*0.1))}} /hari</h2>
                                                             <p><h4>{{$gudang->name_building}}</h4></p>
                                                             <a href="/gudang/{{ $gudang->id }}" class="btn btn-default add-to-cart"><i
                                                                 class="fa fa-shopping-cart"></i>Sewa

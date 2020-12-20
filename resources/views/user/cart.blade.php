@@ -50,7 +50,7 @@
                                 <h4><a href="">{{ $namagudang }}</a></h4>
                             </td>
                             <td class="cart_price">
-                                <p>Rp {{ number_format(floatval($cost)) }}</p>
+                                <p>Rp {{ number_format(floatval($cost*1.1)) }}</p>
                             </td>
                             <td class="cart_quantity">
                                 <div class="cart_quantity_button">
@@ -82,7 +82,7 @@
                                 <table class="table table-condensed total-result">
                                     <tr>
                                         <td>Total</td>
-                                        <td><span>Rp {{ number_format(floatval($cost * ($selisih->days + 1)))}}</span></td>
+                                        <td><span>Rp {{ number_format(floatval($cost *1.1*($selisih->days + 1)))}}</span></td>
                                     </tr>
                                     <tr>
                                         

@@ -29,12 +29,12 @@
                                 <h2>{{ $detailgudang->name_building }}</h2>
                                 {{-- <img src="images/product-details/rating.png" alt=""/> --}}
                                 <span>
-									<span>Rp {{ number_format(floatval($detailgudang->cost))}}</span>
+									<span>Rp {{ number_format(floatval($detailgudang->cost+($detailgudang->cost*0.1))) }}</span>
 									{{-- <i>(Cek ketersediaan dulu sebelum menyewa)</i> --}}
 
 								</span>
                                 <p><b>Alamat    :</b> {{ $detailgudang->address_building }}</p>
-                                <p><b>Kapasitas/Ton :</b> {{ $detailgudang->capacity }} orang</p>
+                                <p><b>Kapasitas/Ton :</b> {{ $detailgudang->capacity }} Ton</p>
                                 <p><b>Pemilik   : </b>{{ $detailgudang->user->name}} </p>
                                 <a href=""><img src="images/product-details/share.png" class="share img-responsive"
                                                 alt=""/></a>

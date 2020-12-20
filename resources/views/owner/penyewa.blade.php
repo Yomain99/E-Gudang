@@ -12,6 +12,8 @@
             <thead>
                 <tr class="headings">
                     <th scope="row">No.</th>
+                    <th>Nama penyewa</th>
+                    <th>Telepon penyewa</th>
                     <th>Nama gudang</th>
                     <th>Alamat gudang</th>
                     <th>Harga</th>
@@ -31,6 +33,8 @@
                     $namagudang = \DB::table('buildings')->where('id', $item->id_building)->value('name_building');
                     $address_building = \DB::table('buildings')->where('id', $item->id_building)->value('address_building');
                     $cost = \DB::table('buildings')->where('id', $item->id_building)->value('cost');
+                    $phone = \DB::table('users')->where('id', $item->id_loaner)->value('phone');
+                    $user = \DB::table('users')->where('id', $item->id_loaner)->value('name');
                     // dd($cost);
                     // $hargagudang = $data->cost;
                     // dd($namagudang, $hargagudang);
@@ -38,9 +42,11 @@
                 @endphp
                 <tr>
                 <td scope="row">{{$loop->iteration}}</td>
+                    <td>{{$user}}</td>
+                    <td>{{$phone}}</td>
                     <td>{{$namagudang}}</td>
                     <td>{{$address_building}}</td>
-                    <td>Rp {{number_format($cost)}}</td>
+                    <td>Rp {{number_format($cost*1.1)}}</td>
                     <td>
                         <p>Mulai</p>
                         <span><b id="start_date">{{ date('d M Y', strtotime($item->day_start)) }}</b></span>
@@ -52,7 +58,7 @@
                     <td>
                         <span><b>{{$selisih->days + 1}} hari</b></span>
                     </td>
-                    <td>Rp {{number_format($item->salary)}}</td>
+                    <td>Rp {{number_format($item->salary*1.1)}}</td>
                     <td>
                         <img src="{{ asset('storage/'. $item->bukti_tf) }}" alt="" width="100px" height="80px">
                     </td>

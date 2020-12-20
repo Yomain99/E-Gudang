@@ -22,7 +22,6 @@
           @else
           <li class="nav-item dropdown">
             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <img src="images/img.jpg" alt="">@yield('akun')
               <span class=" fa fa-chevron-down"> {{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu dropdown-usermenu pull-right">

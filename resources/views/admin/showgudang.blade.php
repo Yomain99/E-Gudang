@@ -67,7 +67,7 @@
                 </tr>
                 <tr>
                   <th>Biaya/hari </th>
-                  <td>: {{$gudang->cost}}</td>
+                  <td>: {{$gudang->cost*1.1}}</td>
 
                 <tr>
                   <th scope="row">Keterangan</th>

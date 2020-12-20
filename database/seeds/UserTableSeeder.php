@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
         $masyarakat->name = 'pemri';
         $masyarakat->email = 'pemri@gmail.com';
         $masyarakat->user_address = 'Jl hos cokroaminoto';
-        $masyarakat->phone = '081235367890';
+        $masyarakat->phone = '081232332323';
         $masyarakat->id_role = '3';
         $masyarakat->password = bcrypt('masyarakat');
         $masyarakat->save();

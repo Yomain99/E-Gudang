@@ -8,7 +8,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Beranda</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                <li class="breadcrumb-item active" aria-current="page">Sewa</li>
             </ol>
         </nav>
         
@@ -47,7 +47,7 @@
                                 <h4><span>{{ $name_building }}</span></h4>
                             </td>
                             <td class="cart_price">
-                                <p>Rp {{ number_format(floatval($cost)) }}</p>
+                                <p>Rp {{ number_format(floatval($cost*1.1)) }}</p>
                             </td>
                             <td>
                                 <p>Mulai</p>
@@ -88,7 +88,7 @@
                                 <table class="table table-condensed total-result">
                                     <tr>
                                         <td>Total</td>
-                                        <td><span>Rp {{ number_format(floatval($item->salary))}}</span></td>
+                                        <td><span>Rp {{ number_format(floatval($item->salary+($item->salary*0.1)))}}</span></td>
                                     </tr>
                                     <tr>
                                         

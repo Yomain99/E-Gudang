@@ -19,7 +19,8 @@
                     <th scope="row">No.</th>
                     <th>Nama gudang</th>
                     <th>Alamat gudang</th>
-                    <th>Harga Sewa</th>
+                    <th>Harga gudang</th>
+                    <th>Harga tertera</th>
                     <th>Pemilik</th>
                     <th>Status</th>
                     <th>Edit</th>
@@ -33,6 +34,7 @@
                     <td>{{ $gudang->name_building }}</td>
                     <td>{{ $gudang->address_building }}</td>
                     <td>Rp {{number_format($gudang->cost)  }}</td>
+                    <td>Rp {{number_format($gudang->cost*1.1)  }}</td>
                 <td><a href="{{ url('admin/pemilik',$gudang->user->id)}}" >{{$gudang->user->name}}</td>
                     <td>
                         @if ( $gudang->submission==1 && $gudang->verif==0 && $gudang->edit==0)
@@ -98,6 +100,10 @@
                                             <h2>{{ $gudang->cost }}</h2>
                                         </div>
                                         <div class="form-group">
+                                            <label for="">Harga Tertera</label>
+                                            <h2>{{ $gudang->cost*1.1 }}</h2>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="">Fasilitas gudang</label>
                                             <div class="row">
                                                 @if ($gudang->antarjemput==1)
@@ -157,6 +163,10 @@
                                         <div class="form-group">
                                             <label for="">Harga gudang</label>
                                             <h2>{{ $gudang->cost }}</h2>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Harga Tertera</label>
+                                            <h2>{{ $gudang->cost*1.1 }}</h2>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Fasilitas gudang</label>

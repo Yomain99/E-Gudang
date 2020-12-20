@@ -36,6 +36,7 @@
                             $datetime1 = new DateTime($item->day_over);
                             $datetime2 = new DateTime($item->day_start);
                             $selisih = $datetime1->diff($datetime2);
+                            $cost = \DB::table('buildings')->where('id', $item->id_building)->value('cost');
                             // dd($selisih->days)
                             @endphp
                             <form action="{{url('bayar')}}" method="POST">
@@ -45,9 +46,9 @@
                                 <input disabled type="text" name="gedung" value="{{\DB::table('buildings')->where('id', $item->id_building)->value('name_building')}}">
                                 <input disabled type="text" name="awal_sewa" value="{{date('d M Y', strtotime($item->day_start))}}">
                                 <input disabled type="text" name="akhir_sewa" value="{{date('d M Y', strtotime($item->day_over))}}">
-                                <input disabled type="text" name="harga" value="Rp {{number_format(\DB::table('buildings')->where('id', $item->id_building)->value('cost'))}}">
+                                <input disabled type="text" name="harga" value="Rp {{ number_format($cost*1.1)}}">
                                 <input disabled type="text" name="durasi" value="{{$selisih->days + 1}}">
-                                <input disabled type="text" name="total" value="Rp {{number_format(\DB::table('buildings')->where('id', $item->id_building)->value('cost') * ($selisih->days + 1))}}">
+                                <input disabled type="text" name="total" value="Rp {{(\DB::table('buildings')->where('id', $item->id_building)->value('cost')) * ($selisih->days + 1) * 1.1}}">
                                 
                             </form>
                         </div>
@@ -57,10 +58,14 @@
                         <p><b>Pembayaran</b></p>
                             <form action="{{url('bayar')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" name="id" value="{{$item->id}}">
-                                <label for=""><b>Nominal Pembayaran (Rp)</b></label>
-                                <input type="text" name="bayar" value="{{\DB::table('buildings')->where('id', $item->id_building)->value('cost') * ($selisih->days + 1)}}">
-                                <label for=""><b>Bukti Transafer</b></label>
+                                <input disabled type="hidden" name="id" value="{{$item->id}}">
+                                <label disabled for=""><b>Nominal Pembayaran (Rp)</b></label>
+                                <input disabled type="text" name="bayar" value="{{(\DB::table('buildings')->where('id', $item->id_building)->value('cost')) * ($selisih->days + 1) * 1.1}}">
+                                <label disabled for=""><b>Nama Rekening</b></label>
+                                <input disabled type="text" name="bayar" value="E-Gudang">
+                                <label disabled for=""><b>Nomor Rekening</b></label>
+                                <input disabled type="text" name="bayar" value="182291839283">
+                                <label disabled for=""><b>Bukti Pembayaran</b></label>
                                 <input type="file" name="bukti_tf" required>
                                 <a href="{{ url('/sewa') }}" class="btn btn-primary"> Batal </a>
                                 <button type="submit" class="btn btn-primary">Pesan</button>

@@ -97,6 +97,7 @@
           <th>Nama gudang</th>
           <th>Alamat gudang</th>
           <th>Harga</th>
+          <th>Harga tertera</th>
           <th>Kapasitas/Ton</th>
           <th>Deskripsi</th>
           <th>Kriteria</th>
@@ -111,6 +112,7 @@
           <td>{{ $gudang->name_building }}</td>
           <td>{{ $gudang->address_building }}</td>
           <td>{{ $gudang->cost }}</td>
+          <td>{{ $gudang->cost*1.1 }}</td>
           <td>{{ $gudang->capacity }}</td>
           <td>{{ $gudang->description }}</td>
           <td>
